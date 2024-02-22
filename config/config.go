@@ -6,10 +6,10 @@ import (
 
 	"github.com/rotisserie/eris"
 	"github.com/spf13/viper"
-	"sikey.com/serverx/dbx"
-	"sikey.com/serverx/gid"
-	"sikey.com/serverx/rdbx"
-	"sikey.com/serverx/zlog"
+	"code.sikey.com.cn/serverbackend/Serverx/dbx"
+	"code.sikey.com.cn/serverbackend/Serverx/gid"
+	"code.sikey.com.cn/serverbackend/Serverx/rdbx"
+	"code.sikey.com.cn/serverbackend/Serverx/zlog"
 )
 
 type Config struct {
