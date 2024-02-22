@@ -1,21 +1,16 @@
-package config
+package confx
 
 import (
 	"os"
 	"strings"
 
-	"github.com/rotisserie/eris"
-	"github.com/spf13/viper"
 	"code.sikey.com.cn/serverbackend/Serverx/dbx"
 	"code.sikey.com.cn/serverbackend/Serverx/gid"
 	"code.sikey.com.cn/serverbackend/Serverx/rdbx"
 	"code.sikey.com.cn/serverbackend/Serverx/zlog"
+	"github.com/rotisserie/eris"
+	"github.com/spf13/viper"
 )
-
-type Config struct {
-	Name string `toml:"name"`
-	Port int    `toml:"port"`
-}
 
 // SetEnvConfig 将环境变量设置到默认值
 func SetEnvConfig(inp ...string) {
@@ -60,6 +55,14 @@ func LoadConfig(file string, opts ...LoadOption) error {
 		rdbx.Connect()
 	}
 	return nil
+}
+
+func GetServerPort() int {
+	return viper.GetInt("port")
+}
+
+func GetServerName() string {
+	return viper.GetString("name")
 }
 
 func containsKey(k string) bool {

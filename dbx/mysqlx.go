@@ -20,6 +20,8 @@ import (
 
 const KeyPrefix = "mysql"
 
+var dbConn *gorm.DB
+
 type mysqlConfig struct {
 	SSH                       bool          `toml:"ssh"` // SSH 是否开启SSH
 	Dsn                       string        // Dsn 数据源地址
@@ -74,8 +76,13 @@ func Connect() *gorm.DB {
 	// SetConnMaxLifetime 设置了连接可复用的最大时间。
 	sqlDB.SetConnMaxLifetime(cfg.MaxLifetime)
 
+	dbConn = conn
 	log.Printf("Mysql connected to %s \n", cfg.Dsn)
 	return conn
+}
+
+func GetConnect() *gorm.DB {
+	return dbConn
 }
 
 func withDsn(dsn string) *driverConfig {

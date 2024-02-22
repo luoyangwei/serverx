@@ -10,6 +10,8 @@ import (
 
 const KeyPrefix = "redis"
 
+var rdbConn *redis.Client
+
 type redisConfig struct {
 	Addr     string // Addr 链接地址
 	DB       int    // DB 数据库, 一般默认是0
@@ -33,8 +35,13 @@ func Connect() *redis.Client {
 	if err := rdb.Ping(context.Background()).Err(); err != nil {
 		log.Fatalln(err)
 	}
+	rdbConn = rdb
 	log.Printf("Redis connected to %s \n", addr)
 	return rdb
+}
+
+func GetConnect() *redis.Client {
+	return rdbConn
 }
 
 func GetRedisConfig() redisConfig {
