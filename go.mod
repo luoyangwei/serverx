@@ -1,4 +1,4 @@
-module code.sikey.com.cn/luoyangwei/serverx
+module code.sikey.com.cn/luoyangwei/serverx.git
 
 go 1.21.4
 
