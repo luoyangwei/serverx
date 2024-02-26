@@ -8,11 +8,11 @@ import (
 	"time"
 
 	sls "github.com/aliyun/aliyun-log-go-sdk"
+	"github.com/luoyangwei/serverx/format"
 	"github.com/spf13/viper"
 	"go.uber.org/zap"
 	"go.uber.org/zap/zapcore"
 	"google.golang.org/protobuf/proto"
-	"code.sikey.com.cn/luoyangwei/serverx.git/format"
 )
 
 const KeyPrefix = "logger"

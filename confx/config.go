@@ -4,10 +4,10 @@ import (
 	"os"
 	"strings"
 
-	"code.sikey.com.cn/luoyangwei/serverx.git/dbx"
-	"code.sikey.com.cn/luoyangwei/serverx.git/gid"
-	"code.sikey.com.cn/luoyangwei/serverx.git/rdbx"
-	"code.sikey.com.cn/luoyangwei/serverx.git/zlog"
+	"github.com/luoyangwei/serverx/dbx"
+	"github.com/luoyangwei/serverx/gid"
+	"github.com/luoyangwei/serverx/rdbx"
+	"github.com/luoyangwei/serverx/zlog"
 	"github.com/rotisserie/eris"
 	"github.com/spf13/viper"
 )
