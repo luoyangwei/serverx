@@ -10,12 +10,12 @@
 [logger]
 encoder = "json"
 [logger.sls]
-accessKeyId = "LTAI5tMWjYSHsq3S57pyu2JX"
-accessKeySecret = "08aBmJYTtW1VJX1sffUmFwSNvJnN58"
+accessKeyId = "xxx"
+accessKeySecret = "xxx"
 endpoint = "cn-shanghai.log.aliyuncs.com"
 logStoreName = "w303b"
 projectName = "w303b-test"
-sourceIp = "106.75.230.4"
+sourceIp = "0.0.0.0"
 topic = "servers"
 ```
 
@@ -52,9 +52,8 @@ aliyun sls 服务的的认证信息
 
 ```toml
 [mysql]
-# dsn = "root:qq123123@tcp(127.0.0.1:3306)/sikey?charset=utf8mb4&parseTime=true&loc=Local"
-dsn = "root:9RKdJsEQKnjrni9R@tcp(10.23.148.10:3306)/sikey?charset=utf8mb4&parseTime=true&loc=Local"
-ssh = true
+dsn = "root:qq123123@tcp(127.0.0.1:3306)/sikey?charset=utf8mb4&parseTime=true&loc=Local"
+ssh = false
 # Ignore ErrRecordNotFound error for logger
 skipDefaultTransaction = true
 # Slow SQL threshold
@@ -80,5 +79,5 @@ addr = "106.75.230.4:6379"
 channel = "message"
 connectKey = "connects"
 db = 0
-password = "sikey!Q@W#E456"
+password = "xxx"
 ```

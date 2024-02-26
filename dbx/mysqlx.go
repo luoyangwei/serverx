@@ -24,6 +24,9 @@ var dbConn *gorm.DB
 
 type mysqlConfig struct {
 	SSH                       bool          `toml:"ssh"` // SSH 是否开启SSH
+	SSHHostname               string        `toml:"sshHostname"`
+	SSHUser                   string        `toml:"sshUser"`
+	SSHPassword               string        `toml:"password"`
 	Dsn                       string        // Dsn 数据源地址
 	SkipDefaultTransaction    bool          // SkipDefaultTransaction 跳过默认事务
 	SlowThreshold             time.Duration // SlowThreshold 慢 SQL 阈值
@@ -116,15 +119,15 @@ func readMysqlConfig() mysqlConfig {
 
 	if cfg.SSH {
 		config := &ssh.ClientConfig{
-			User: "root",
+			User: cfg.SSHUser,
 			Auth: []ssh.AuthMethod{
-				ssh.Password("RHTUH2z49aEXnsgz"),
+				ssh.Password(cfg.SSHPassword),
 			},
 			HostKeyCallback: ssh.InsecureIgnoreHostKey(),
 		}
 		var err error
 		var clt *ssh.Client
-		if clt, err = ssh.Dial("tcp", "106.75.230.4:22", config); err != nil {
+		if clt, err = ssh.Dial("tcp", cfg.SSHHostname, config); err != nil {
 			log.Fatalln(err)
 		}
 
