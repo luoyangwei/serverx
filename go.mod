@@ -1,4 +1,4 @@
-module code.sikey.com.cn/serverbackend/Serverx
+module code.sikey.com.cn/luoyangwei/serverx
 
 go 1.21.4
 
