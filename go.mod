@@ -1,4 +1,4 @@
-module github.com/luoyangwei/serverx
+module x.sikey.com.cn/serverx
 
 go 1.21.4
 
