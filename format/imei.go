@@ -2,6 +2,6 @@ package format
 
 import "strings"
 
-func SubMac(mac string) string {
+func IMEI(mac string) string {
 	return strings.Replace(mac, ":", "", -1)
 }
